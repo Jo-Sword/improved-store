@@ -1,0 +1,125 @@
+:root{
+
+    --bg: #eaeaea;
+    --box: #d1d1d1;
+    
+    --text: #212121;
+    --text-alt: #f9f9f9;
+
+    --primary: #42e121;
+    --primary-hover: #63eb47;
+    --primary-dark: #399c24
+}
+
+*, *::before, *::after{box-sizing: border-box}
+
+body {
+	margin: 0;
+	line-height: 1.5;
+    margin:0;padding:0;
+    background-color: var(--bg);
+    color: #212121;
+}
+
+/* Vínculos */
+
+a{
+    text-decoration: none;
+    color: #404040
+}
+a:hover{
+    color: #212121
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 0.5em 0;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+h1,h2,h3{margin:0}
+
+h1{font-size: 3rem}
+h2{font-size: 2.8rem}
+h3{font-size: 2.5rem}
+
+/* Product Card */
+
+.products > .product{
+    box-shadow: 0 0 1px 1px #e6e6e6;
+    transition: .1s
+}
+
+.products > .product:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 1px 1px #d9d9d9;
+}
+
+.products > .product > a{display: block}
+.products > .product > a > img{
+    width: 100%;
+    height: 100vh;
+
+    max-height: 350px
+}
+
+.products > .product > p{
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0 .5rem
+}
+
+.products > .product > .prices{
+    display: flex;
+    width: 52%;
+    padding: 0 .5rem;
+    justify-content: space-around
+}
+
+.products > .product > .prices.no-discount{justify-content: flex-start;width:100%}
+
+.products > .product > .prices > .price{
+    color: var(--primary-dark);
+    font-size: 1.1rem;
+    font-weight: bold
+}
+
+.products > .product > .prices > .price.discount{margin-right: .5rem}
+
+.products > .product > .prices > .price.has-discount{
+    color: #808080;
+    text-decoration: line-through;
+    font-weight: normal
+}
+
+@media (min-width: 1399.98px) {
+    .products > .product > a > img{max-height: 500px}
+}
+
+@media (max-width: 767.98px) {
+    .products > .product > a > img{max-height: 250px}
+    .products > .product > .prices{width: 90%}
+}
+
+/* TITLE LINE */
+.title_line{position: relative;display: inline-block}
+.title_line::before, .title_line::after{
+    content: '';
+    position: absolute;
+    top: calc(50% + 1px);
+    height: 2px;
+    width: 50%;
+    background-color: #212121
+}
+.title_line::before{left: -55%}
+.title_line::after{right: -55%}
+
+@media (max-width: 767.98px) {
+
+    .title_line::before, .title_line::after{width: 30%}
+    .title_line::before{left: -33%}
+    .title_line::after{right: -33%}
+
+}
